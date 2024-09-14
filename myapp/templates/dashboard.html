@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+/* General reset for better cross-browser rendering */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Header styling */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+h1 {
+    display: inline;
+    font-size: 28px;
+    color: #007bff;
+}
+
+/* Button styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #218838;
+}
+
+/* Logout link styling */
+a[href*="logout"] {
+    display: block;
+    margin-top: 20px;
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a[href*="logout"]:hover {
+    text-decoration: underline;
+}
+
+
+    </style>
+</head>
+<body>
+    
+<h2>Welcome <h1>{{username}}</h1></h2>
+
+<a href="{% url 'video-call' %}" class="button">New meeting</a>
+<a href="{% url 'join' %}" class="button">join meeting</a>
+
+<a href="{% url 'logout'  %}">logout</a>
+
+
+</body>
+</html>
